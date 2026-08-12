@@ -1,26 +1,92 @@
-@import "tailwindcss";
+/* Cascade layers: later laayers beat earlier ones */
+@layer reset, tokens, base;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  * {
+    margin: 0;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    -webkit-text-size-adjust: none;
+  }
+
+  body {
+    min-height: 100dvh; /* fill the viewport */
+    line-height: 1.5; /* accesibility */
+  }
+
+  /* no media overflows container */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/*TOKENS*/
+@layer tokens {
+  /* primitive values from image reference */
+  :root {
+    --red-500: #ff0013;
+    --red-700: #b8000d;
+    --cyan-300: #2fe0f2;
+    --black-950: #0b0b0e;
+    --gray-850: #1c1c22;
+    --white-0: #ffffff;
+
+    /* for semantics */
+    --color-bg: var(--black-950);
+    --color-surface: var(--gray-850);
+    --color-text: var(--white-0);
+    --color-brand: var(--red-500);
+    --color-brand-deep: var(--red-700);
+    --color-accent: var(--cyan-300);
+
+    /* TODO: typography roles:*/
+    --foont-ui: system-ui;
+  }
+
+  @layer base {
+    body {
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--foont-ui);
+    }
+
+    ::selection {
+      background: var(--color-brand);
+      color: var(--color-text);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+  }
 }
