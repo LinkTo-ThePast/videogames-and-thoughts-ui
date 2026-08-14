@@ -1,5 +1,10 @@
 function home() {
-  return <h1 className="text-red-500">Bienvenido a tu diario!</h1>;
+  return (
+    <main>
+      <h1>Mementos</h1>
+      <p>¡Pantalla de bienvenida en contrucción!</p>
+    </main>
+  );
 }
 
 export default home;

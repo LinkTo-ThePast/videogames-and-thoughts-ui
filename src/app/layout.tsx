@@ -2,15 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title:
-    "Video games diary. Talk & share about your favourite videogames experiences.",
+  title: "Mementos",
   description:
-    "Diary blog-type web app. Project for learning frontend and backend funtamentals while exploring something that I truly enjoy like videogames.",
+    "Proyecto personal para recordar una de las actividades que realmente disfruto: jugar videojuegos.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es" className="h-full antialiased">
+    <html lang="es">
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

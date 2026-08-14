@@ -69,14 +69,14 @@
     --color-accent: var(--cyan-300);
 
     /* TODO: typography roles:*/
-    --foont-ui: system-ui;
+    --font-ui: system-ui;
   }
 
   @layer base {
     body {
       background: var(--color-bg);
       color: var(--color-text);
-      font-family: var(--foont-ui);
+      font-family: var(--font-ui);
     }
 
     ::selection {
