@@ -1,4 +1,4 @@
-function home() {
+function Home() {
   return (
     <main>
       <h1>Mementos</h1>
@@ -7,4 +7,4 @@ function home() {
   );
 }
 
-export default home;
+export default Home;
