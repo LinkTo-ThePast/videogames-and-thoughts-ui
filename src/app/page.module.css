@@ -1,0 +1,33 @@
+.heroScene {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-areas: "stack";
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+.environmentLayer,
+.uiLayer {
+  grid-area: stack;
+}
+
+.uiLayer {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+  pointer-events: none;
+}
+
+.uiLayer > * {
+  pointer-events: auto;
+}
+
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
