@@ -1,23 +1,18 @@
 import Link from "next/link";
+import styles from "./main-menu.module.css";
 
 function MainMenu() {
   return (
-    <ul>
+    <ul className={styles.menuList}>
       {/** MAIN MENU  */}
-      <li>
-        <Link href={"/iniciar-sesion"}>
-        INICIAR SESIÓN
-      </Link>
+      <li className={styles.menuLink}>
+        <Link href={"/iniciar-sesion"}>INICIAR SESIÓN</Link>
       </li>
-      <li>
-        <Link href={"/comenzar-rehabilitacion"}>
-        COMENZAR REHABILITACIÓN
-      </Link>
+      <li className={styles.menuLink}>
+        <Link href={"/comenzar-rehabilitacion"}>COMENZAR REHABILITACIÓN</Link>
       </li>
-      <li>
-        <Link href={"/conocer-mas"}>
-        ACERCA DE
-      </Link>
+      <li className={styles.menuLink}>
+        <Link href={"/conocer-mas"}>ACERCA DE</Link>
       </li>
     </ul>
   );
